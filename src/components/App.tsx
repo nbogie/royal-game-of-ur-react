@@ -1,13 +1,10 @@
-import { MyComponent } from "./MyComponent";
 import "./App.css";
-import { greet } from "../greet";
+import { GameOfUr } from "./GameOfUr";
 
 function App() {
     return (
         <div className="App">
-            <MyComponent />
-
-            {greet("World")}
+            <GameOfUr />
         </div>
     );
 }
