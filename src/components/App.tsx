@@ -1,10 +1,10 @@
 import "./App.css";
-import { GameOfUr } from "./GameOfUr";
+import { GameOfUrView } from "./GameOfUrView";
 
 function App() {
     return (
         <div className="App">
-            <GameOfUr />
+            <GameOfUrView />
         </div>
     );
 }

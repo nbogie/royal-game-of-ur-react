@@ -1,3 +1,74 @@
+:root {
+    --pal-1: #8dccad;
+    --pal-2: #988864;
+    --pal-3: #fea6a2;
+    --pal-4: #f9d6ac;
+    --pal-5: #ffe9af;
+}
 html {
     background: #f8f8f8;
+}
+body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    aspect-ratio: calc(8 / 3);
+}
+
+.game-square {
+    background: var(--pal-5);
+    margin: 0.1rem;
+    padding: 0.5rem;
+    aspect-ratio: 1;
+    display: grid;
+    min-width: 3rem;
+    font-size: 3rem;
+    place-items: center;
+    border-radius: 0.2rem;
+    border: 6px solid var(--pal-4);
+}
+.game-square.void {
+    border: none;
+    background: none;
+}
+.game-square.special {
+    background: var(--pal-2);
+}
+
+.roll-value {
+    font-size: 2rem;
+}
+
+.piece {
+    position: absolute;
+    aspect-ratio: 1;
+    width: 2.5;
+    font-size: 1.5rem;
+    display: grid;
+    place-items: center;
+    user-select: none;
+    background: gainsboro;
+    outline: 6px solid gainsboro;
+    border-radius: 50%;
+    box-shadow: 0.3rem 0.3rem 0.4rem 0.3rem black;
+}
+
+.piece.p1 {
+    outline-color: var(--pal-1);
+}
+.piece.p2 {
+    outline-color: var(--pal-3);
+}
+
+.piece.selected {
+    border: 2px solid rgba(255, 255, 255, 0.647);
+    outline-width: 8px;
+}
+
+button.control {
+    font-size: 2rem;
+    padding: 0.5rem;
 }
