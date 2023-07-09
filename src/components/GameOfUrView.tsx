@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { GameState, createInitialGameState } from "../core/gameState";
-import { PlayerPiece } from "../core/playerPiece";
+import { PlayerPiece, PlayerSide } from "../core/playerPiece";
 import { RollOutcome, generateRoll } from "../core/roll";
 import { RollView } from "./RollView";
 import { UrBoardView } from "./UrBoardView";
@@ -16,6 +16,9 @@ export function GameOfUrView() {
     }
     function handleResetClick() {
         setGameState((gs) => gs);
+    }
+    function whoseTurnIsIt(): PlayerSide {
+        return gameState.isPlayerOneTurn ? "p1" : "p2";
     }
     function handleClickPiece(piece: PlayerPiece): void {
         setGameState((gs) => ({
@@ -59,6 +62,7 @@ export function GameOfUrView() {
                     "Nothing selected"
                 )}
             </div>
+            <div>Whose turn? {whoseTurnIsIt()}</div>
         </div>
     );
 }

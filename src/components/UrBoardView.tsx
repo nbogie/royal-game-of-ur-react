@@ -16,6 +16,8 @@ export function UrBoardView({ gameState, handleClickPiece }: UrBoardProps) {
                     className={classNames("game-square", slot.sType)}
                 >
                     {slot.sType === "special" ? "⭐" : ""}
+                    <span className="slot-id">{slot.id}</span>
+
                     {slot.occupier && (
                         <PieceView
                             piece={slot.occupier}
